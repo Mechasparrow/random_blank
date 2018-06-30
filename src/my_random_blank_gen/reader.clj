@@ -2,11 +2,14 @@
   (:gen-class)
   (:require [clojure.data.json :as json]))
 
+
 (defn get-file-input [filename mode]
-  (do
+  (try (do
     (println "getting file input")
     (if (= mode :raw)
      (slurp filename)
     (if (= mode :json)
       (let [json-data (get-file-input filename :raw)]
-        (json/read-str json-data))))))
+        (json/read-str json-data)))))
+       (catch Exception e nil)))
+
