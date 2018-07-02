@@ -2,5 +2,7 @@
   (:gen-class))
 
 (defn random-item [items] ;; returns random item from list
-  (println "random item..."))
+  (let [item-array (to-array items)] (get items (random-idx (alength item-array)))))
 
+(defn random-idx [item-length]
+  (rand-int item-length))
