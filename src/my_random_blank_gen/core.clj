@@ -12,7 +12,7 @@
     (def ans (read-line))
 
     (def res-list (case ans
-      "read" (println "readings")
+      "read" (prompts/list-read-prompt)
       "create" (prompts/create-list-prompts)))
     (def rand-item (generator/random-item res-list))
     (println (str "the random item is " rand-item))))

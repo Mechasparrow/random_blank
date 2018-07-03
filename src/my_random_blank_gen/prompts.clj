@@ -1,5 +1,6 @@
 (ns my-random-blank-gen.prompts
-  (:gen-class))
+  (:gen-class)
+  (:require [my-random-blank-gen.reader :as reader]))
 
 (defn create-list-prompts [];; Creating a list by prompts
   (do
@@ -19,3 +20,10 @@
           (println)))
           @items))))
 
+(defn list-read-prompt [] ;; Reads from the a choice file
+  (do
+    (println "reading from list")
+    (print "what is the filename?: ")
+    (flush)
+    (def filename (read-line))
+    (reader/get-list-by-data filename)))

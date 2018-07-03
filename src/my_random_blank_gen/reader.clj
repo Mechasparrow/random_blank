@@ -13,3 +13,7 @@
         (json/read-str json-data)))))
        (catch Exception e nil)))
 
+
+(defn get-list-by-data [filename]
+  (let [path (str "data/" filename)]
+    (get-file-input path :json)))
