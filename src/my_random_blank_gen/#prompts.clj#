@@ -13,9 +13,9 @@
         (do
           (print (+ @i 1))
           (print ")")
-          (print "\n")
           (flush)
           (swap! i inc)
-          (swap! items (fn [arr] (conj arr (read-line))))))
+          (swap! items (fn [arr] (conj arr (read-line))))
+          (println)))
           @items))))
 

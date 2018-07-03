@@ -1,0 +1,6 @@
+(ns my-random-blank-gen.writer
+  (:gen-class))
+
+(defn write-to-json [list path]
+  (do
+    (println "writing to file...")))
